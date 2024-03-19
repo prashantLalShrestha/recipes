@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Recipes</string>
+
+    <!-- Splash -->
+    <string name="acc_splash_icon">Recipes Logo</string>
+    <string name="splash_content_text">Recipes</string>
+</resources>
