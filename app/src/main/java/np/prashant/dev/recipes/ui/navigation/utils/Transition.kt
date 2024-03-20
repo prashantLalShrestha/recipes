@@ -1,4 +1,4 @@
-package np.prashant.dev.recipes.ui.navigation
+package np.prashant.dev.recipes.ui.navigation.utils
 
 import androidx.navigation.AnimBuilder
 import np.prashant.dev.recipes.R

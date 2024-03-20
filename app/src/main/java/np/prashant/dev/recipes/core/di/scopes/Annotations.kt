@@ -1,4 +1,4 @@
-package np.prashant.dev.recipes.core.inject
+package np.prashant.dev.recipes.core.di.scopes
 
 import javax.inject.Qualifier
 

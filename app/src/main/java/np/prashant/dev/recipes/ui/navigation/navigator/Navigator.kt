@@ -1,4 +1,4 @@
-package np.prashant.dev.recipes.ui.navigation
+package np.prashant.dev.recipes.ui.navigation.navigator
 
 import androidx.navigation.NavController
 

@@ -12,7 +12,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import np.prashant.dev.recipes.ui.navigation.AppNavigator
+import np.prashant.dev.recipes.ui.navigation.navigator.AppNavigator
 import np.prashant.dev.recipes.ui.navigation.MainNavHost
 import np.prashant.dev.recipes.ui.navigation.NavigationGraph
 import np.prashant.dev.recipes.ui.navigation.NavigationGraph.Screen

@@ -8,8 +8,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import np.prashant.dev.recipes.ui.navigation.NavigationGraph
 import np.prashant.dev.recipes.ui.navigation.NavigationGraph.Screen
-import np.prashant.dev.recipes.ui.navigation.Navigator
-import np.prashant.dev.recipes.ui.navigation.defaultTransition
+import np.prashant.dev.recipes.ui.navigation.navigator.Navigator
+import np.prashant.dev.recipes.ui.navigation.utils.defaultTransition
 import javax.inject.Inject
 import kotlin.time.Duration.Companion.seconds
 

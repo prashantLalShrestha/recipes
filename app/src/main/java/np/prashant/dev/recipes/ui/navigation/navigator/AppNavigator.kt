@@ -1,10 +1,10 @@
-package np.prashant.dev.recipes.ui.navigation
+package np.prashant.dev.recipes.ui.navigation.navigator
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.launch
-import np.prashant.dev.recipes.core.inject.ProcessLifetime
+import np.prashant.dev.recipes.core.di.scopes.ProcessLifetime
 import javax.inject.Inject
 import javax.inject.Singleton
 
