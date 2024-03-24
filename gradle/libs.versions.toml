@@ -84,9 +84,10 @@ coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-
 # Ktor client
 ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
 ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-serialization = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
-ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
 
 # Unit Test
 test-junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -113,9 +114,10 @@ coroutines = [
 ktor = [
     "ktor-client-android",
     "ktor-client-core",
+    "ktor-client-content-negotiation",
+    "ktor-client-logging",
     "ktor-client-okhttp",
     "ktor-client-serialization",
-    "ktor-client-content-negotiation"
 ]
 
 room = [

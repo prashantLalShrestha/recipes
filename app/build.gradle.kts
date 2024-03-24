@@ -22,7 +22,7 @@ android {
         }
 
 
-        buildConfigField("String", "API_HOST", "\"https://api.spoonacular.com\"")
+        buildConfigField("String", "API_HOST", "\"api.spoonacular.com\"")
     }
 
     buildTypes {
