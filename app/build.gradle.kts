@@ -1,8 +1,9 @@
 plugins {
-    id("com.android.application")
-    id("com.google.devtools.ksp")
-    id("org.jetbrains.kotlin.android")
-    id("dagger.hilt.android.plugin")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin)
+    alias(libs.plugins.ksp)
+    kotlin(libs.plugins.kotlinx.serialization.get().pluginId) version libs.versions.kotlin
 }
 
 android {
