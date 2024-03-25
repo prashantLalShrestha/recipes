@@ -2,6 +2,7 @@ package np.prashant.dev.recipes.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+val AntiFlashWhite = Color(0xFFF3F3F3)
 val LightFrenchBeige = Color(0xFFD0AE6C)
 val Camel = Color(0xFFC09E6C)
 val DarkJungleGreen = Color(0xFF1C1F23)

@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -28,6 +29,11 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Make layout content draw underneath the status bar and navigation bar. Use
+        // Accompanist Insets (Compose) or Insetter (Views) to offset your layout when needed.
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
         setContent {
             AppTheme {
                 val navController = rememberNavController()
