@@ -32,7 +32,7 @@ class SplashViewModel @Inject constructor(
 
     private fun navigateToNextScreen() {
         navigator.navigate { controller ->
-            controller.navigate(Screen.RecipeSearch.route) {
+            controller.navigate(Screen.Favourites.route) {
                 anim { defaultTransition() }
                 popUpTo(NavigationGraph.GRAPH_ROUTE) {
                     inclusive = true

@@ -1,10 +1,10 @@
-package np.prashant.dev.recipes.ui.search.components
+package np.prashant.dev.recipes.ui.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -13,7 +13,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardElevation
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -25,7 +24,6 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -37,6 +35,7 @@ fun RecipeListItem(
     imageUrl: String,
     title: String,
     isFavourite: Boolean,
+    onClick: () -> Unit
 ) {
     Card(
         modifier = modifier
@@ -45,7 +44,8 @@ fun RecipeListItem(
                 shape = MaterialTheme.shapes.medium,
                 spotColor = MaterialTheme.colorScheme.primaryContainer,
                 ambientColor = MaterialTheme.colorScheme.primaryContainer,
-            ),
+            )
+            .clickable(onClick = onClick),
         shape = MaterialTheme.shapes.medium,
     ) {
         Box(
@@ -119,6 +119,7 @@ fun RecipeListItemPreview() {
             imageUrl = "https://spoonacular.com/recipeImages/756817-312x231.jpg",
             title = "Matcha Pancakes",
             isFavourite = true,
+            onClick = {}
         )
     }
 }

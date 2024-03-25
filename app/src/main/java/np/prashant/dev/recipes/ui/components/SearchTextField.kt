@@ -17,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import np.prashant.dev.recipes.ui.theme.AppTheme
@@ -24,7 +25,9 @@ import np.prashant.dev.recipes.ui.theme.AppTheme
 @Composable
 fun SearchTextField(
     modifier: Modifier = Modifier,
+    enabled: Boolean = true,
     value: String,
+    leadingIcon: @Composable (() -> Unit)? = null,
     placeholder: String? = null,
     onValueChange: (String) -> Unit,
 ) {
@@ -33,9 +36,10 @@ fun SearchTextField(
 
     OutlinedTextField(
         modifier = modifier,
+        enabled = enabled,
         value = value,
         interactionSource = source,
-        leadingIcon = {
+        leadingIcon = leadingIcon ?: {
             Icon(
                 modifier = Modifier.padding(start = 8.dp),
                 imageVector = Icons.Default.Search,

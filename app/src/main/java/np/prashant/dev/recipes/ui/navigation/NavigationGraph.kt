@@ -8,6 +8,8 @@ object NavigationGraph {
     enum class Screen(val route: String) {
         Splash("splash"),
         RecipeSearch("recipe-search"),
+        Favourites("favourites"),
+        RecipeDetail("recipe-detail"),
     }
 
     object NavArguments

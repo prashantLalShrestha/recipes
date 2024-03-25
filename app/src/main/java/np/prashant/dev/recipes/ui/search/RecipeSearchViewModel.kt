@@ -5,12 +5,16 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.launch
 import np.prashant.dev.recipes.services.domain.recipes.usecases.SearchRecipe
+import np.prashant.dev.recipes.ui.navigation.NavigationGraph.Screen
+import np.prashant.dev.recipes.ui.navigation.navigator.Navigator
 import javax.inject.Inject
 
 
 @HiltViewModel
 class RecipeSearchViewModel @Inject constructor(
+    private val navigator: Navigator,
     private val searchRecipe: SearchRecipe
 ) : ViewModel() {
 
@@ -18,7 +22,23 @@ class RecipeSearchViewModel @Inject constructor(
     private var searchRecipeJob: Job? = null
 
     init {
-        performSearchRecipe("pancakes")
+//        performSearchRecipe("pancakes")
+    }
+
+    fun navigateBack() {
+        viewModelScope.launch {
+            navigator.navigate { controller ->
+                controller.navigateUp()
+            }
+        }
+    }
+
+    fun navigateToRecipeDetail(recipeId: Long) {
+        viewModelScope.launch {
+            navigator.navigate { controller ->
+                controller.navigate(Screen.RecipeDetail.route + "?id=$recipeId")
+            }
+        }
     }
 
     fun performSearchRecipe(query: String) {
