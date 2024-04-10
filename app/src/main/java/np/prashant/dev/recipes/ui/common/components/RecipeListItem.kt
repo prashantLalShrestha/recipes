@@ -1,4 +1,4 @@
-package np.prashant.dev.recipes.ui.components
+package np.prashant.dev.recipes.ui.common.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

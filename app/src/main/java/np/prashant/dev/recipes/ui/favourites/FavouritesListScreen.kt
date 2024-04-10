@@ -23,8 +23,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import np.prashant.dev.recipes.ui.components.RecipeListItem
-import np.prashant.dev.recipes.ui.components.SearchTextField
+import np.prashant.dev.recipes.ui.common.components.RecipeListItem
+import np.prashant.dev.recipes.ui.common.components.SearchTextField
 import np.prashant.dev.recipes.ui.theme.AppTheme
 
 @Composable
