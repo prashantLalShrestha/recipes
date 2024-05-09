@@ -1,9 +1,9 @@
 [versions]
-androidxComposeActivity = "1.8.2"
-androidxComposeBom = "2024.03.00"
+androidxComposeActivity = "1.9.0"
+androidxComposeBom = "2024.05.00"
 androidxComposeNavigation = "2.7.7"
-androidxCore = "1.12.0"
-androidGradlePlugin = "8.3.1"
+androidxCore = "1.13.1"
+androidGradlePlugin = "8.4.0"
 androidxJunit = "1.1.5"
 androidxLifecycle = "2.7.0"
 coil = "2.2.2"
