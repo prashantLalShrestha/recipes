@@ -2,9 +2,8 @@ package np.prashant.dev.recipes.ui.recipedetail
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
+import np.prashant.dev.recipes.ui.navigation.NavigationGraph.NavArguments
 import np.prashant.dev.recipes.ui.navigation.navigator.Navigator
 import javax.inject.Inject
 
@@ -15,16 +14,10 @@ class RecipeDetailViewModel @Inject constructor(
 ) : ViewModel() {
 
     init {
-        savedStateHandle.get<Long>("id")?.let { recipeId ->
+        savedStateHandle.get<Long>(NavArguments.RECIPE_ID)?.let { recipeId ->
            println("RecipeDetailViewModel: $recipeId")
         }
     }
 
-    fun navigateBack() {
-        viewModelScope.launch {
-            navigator.navigate { controller ->
-                controller.navigateUp()
-            }
-        }
-    }
+    fun navigateBack() = navigator.navigateBack()
 }

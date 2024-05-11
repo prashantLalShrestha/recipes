@@ -31,14 +31,11 @@ class SplashViewModel @Inject constructor(
     private suspend fun cosmeticDelay() = delay(COSMETIC_DELAY)
 
     private fun navigateToNextScreen() {
-        navigator.navigate { controller ->
-            controller.navigate(Screen.Favourites.route) {
-                anim { defaultTransition() }
-                popUpTo(NavigationGraph.GRAPH_ROUTE) {
-                    inclusive = true
-                }
-            }
-        }
+        navigator.navigateTo(
+            Screen.Favourites(),
+            NavigationGraph.GRAPH_ROUTE,
+            inclusive = true
+        )
     }
 
     companion object {

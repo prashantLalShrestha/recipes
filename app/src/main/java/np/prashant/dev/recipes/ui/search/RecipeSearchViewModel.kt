@@ -1,7 +1,6 @@
 package np.prashant.dev.recipes.ui.search
 
 import androidx.lifecycle.viewModelScope
-import androidx.navigation.NavController
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
@@ -24,7 +23,7 @@ import javax.inject.Inject
 @HiltViewModel
 class RecipeSearchViewModel @Inject constructor(
     private val navigator: Navigator,
-    searchRecipe: SearchRecipe
+    searchRecipe: SearchRecipe,
 ) : ViewModel<RecipeSearchAction, RecipeSearchState>(initialState = RecipeSearchState()) {
 
     private val searchRecipeJob: Job = state
@@ -44,9 +43,7 @@ class RecipeSearchViewModel @Inject constructor(
     override suspend fun handleAction(action: RecipeSearchAction) {
         when (action) {
             is RecipeSearchAction.Search -> setState { copy(searchText = action.text) }
-            is RecipeSearchAction.Navigation -> navigator.navigate { controller ->
-                action.handleNavigation(controller)
-            }
+            is RecipeSearchAction.Navigation -> action.handleNavigation(navigator)
         }
     }
 }
@@ -65,10 +62,9 @@ private fun Flow<RecipeSearchState>.searchRecipes(searchRecipe: SearchRecipe) =
         }
 
 
-private fun RecipeSearchAction.Navigation.handleNavigation(controller: NavController) {
+private fun RecipeSearchAction.Navigation.handleNavigation(navigator: Navigator) {
     when (this) {
-        RecipeSearchAction.Navigation.Back -> controller.navigateUp()
-        is RecipeSearchAction.Navigation.RecipeDetail ->
-            controller.navigate(Screen.RecipeDetail.route + "?id=${id}")
+        RecipeSearchAction.Navigation.Back -> navigator.navigateBack()
+        is RecipeSearchAction.Navigation.RecipeDetail -> navigator.navigateTo(Screen.RecipeDetail(id))
     }
 }
