@@ -1,4 +1,4 @@
-package np.prashant.dev.recipes.ui.navigation.utils
+package np.prashant.dev.recipes.ui.navigation.compose
 
 import android.app.Activity
 import androidx.compose.runtime.Composable
@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.flow.receiveAsFlow
 import np.prashant.dev.recipes.ui.navigation.model.NavigationIntent
+import np.prashant.dev.recipes.ui.navigation.utils.defaultTransition
 
 @Composable
 fun NavigationEffect(

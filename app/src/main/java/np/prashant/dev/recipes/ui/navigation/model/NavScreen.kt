@@ -2,7 +2,6 @@ package np.prashant.dev.recipes.ui.navigation.model
 
 import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavDeepLink
-import androidx.navigation.NavType
 import androidx.navigation.navArgument
 
 interface NavScreen {
@@ -79,20 +78,3 @@ open class NavScreenWithArgs(
         return builder.toString()
     }
 }
-
-
-sealed interface NavArgType {
-    val key: String
-    val type: NavType<*>
-}
-
-data class NavArg(
-    override val key: String,
-    override val type: NavType<*> = NavType.StringType
-) : NavArgType
-
-data class OptionalNavArg(
-    override val key: String,
-    override val type: NavType<*> = NavType.StringType,
-    val defaultValue: Any? = null,
-) : NavArgType

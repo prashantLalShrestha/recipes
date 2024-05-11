@@ -1,4 +1,4 @@
-package np.prashant.dev.recipes.ui.navigation
+package np.prashant.dev.recipes.ui.navigation.compose
 
 import androidx.compose.animation.AnimatedContentScope
 import androidx.compose.runtime.Composable

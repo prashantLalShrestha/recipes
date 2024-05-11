@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import np.prashant.dev.recipes.ui.favourites.FavouritesListScreen
 import np.prashant.dev.recipes.ui.navigation.NavigationGraph.Screen
+import np.prashant.dev.recipes.ui.navigation.compose.NavHost
+import np.prashant.dev.recipes.ui.navigation.compose.composable
 import np.prashant.dev.recipes.ui.recipedetail.RecipeDetailScreen
 import np.prashant.dev.recipes.ui.search.RecipeSearchScreen
 import np.prashant.dev.recipes.ui.splash.SplashScreen

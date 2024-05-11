@@ -8,7 +8,7 @@ import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import np.prashant.dev.recipes.ui.navigation.MainNavHost
 import np.prashant.dev.recipes.ui.navigation.navigator.AppNavigator
-import np.prashant.dev.recipes.ui.navigation.utils.NavigationEffect
+import np.prashant.dev.recipes.ui.navigation.compose.NavigationEffect
 import np.prashant.dev.recipes.ui.theme.AppTheme
 import javax.inject.Inject
 
