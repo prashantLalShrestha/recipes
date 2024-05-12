@@ -91,7 +91,7 @@ fun RecipeListItem(
                     modifier = Modifier.weight(1f),
                     text = title,
                     style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.primary,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
                 )

@@ -2,6 +2,7 @@ package np.prashant.dev.recipes.ui.navigation
 
 import androidx.navigation.NavType
 import np.prashant.dev.recipes.ui.navigation.model.NavArg
+import np.prashant.dev.recipes.ui.navigation.model.NavArgType
 import np.prashant.dev.recipes.ui.navigation.model.NavScreen
 import np.prashant.dev.recipes.ui.navigation.model.NavScreenWithArgs
 import np.prashant.dev.recipes.ui.navigation.model.NavScreenWithNoArgs
@@ -11,11 +12,15 @@ object NavigationGraph {
     const val GRAPH_ROUTE = "/root"
     const val GRAPH_DEEPLINK_PREFIX = "android-app://androidx.navigation"
 
-    sealed class Screen : NavScreen {
-        data object Splash : NavScreenWithNoArgs(Routes.SPLASH)
-        data object RecipeSearch : NavScreenWithNoArgs(Routes.RECIPE_SEARCH)
-        data object Favourites : NavScreenWithNoArgs(Routes.FAVOURITES)
-        data object RecipeDetail : NavScreenWithArgs(
+    sealed interface Screen : NavScreen {
+        sealed class ScreenWithNoArgs(route: String) : NavScreenWithNoArgs(route), Screen
+        sealed class ScreenWithArgs(route: String, vararg args: NavArgType) :
+            NavScreenWithArgs(route, *args), Screen
+
+        data object Splash : ScreenWithNoArgs(Routes.SPLASH)
+        data object RecipeSearch : ScreenWithNoArgs(Routes.RECIPE_SEARCH)
+        data object Favourites : ScreenWithNoArgs(Routes.FAVOURITES)
+        data object RecipeDetail : ScreenWithArgs(
             Routes.RECIPE_DETAIL,
             NavArg(NavArguments.RECIPE_ID, NavType.LongType)
         ) {

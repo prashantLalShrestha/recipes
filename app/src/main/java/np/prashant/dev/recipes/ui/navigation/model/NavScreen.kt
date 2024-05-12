@@ -10,7 +10,7 @@ interface NavScreen {
     val deepLinks: List<NavDeepLink>
 }
 
-open class NavScreenWithNoArgs(route: String) : NavScreen {
+abstract class NavScreenWithNoArgs(route: String) : NavScreen {
     override val fullRoute = route
     override val arguments = emptyList<NamedNavArgument>()
     override val deepLinks = emptyList<NavDeepLink>()
@@ -18,7 +18,7 @@ open class NavScreenWithNoArgs(route: String) : NavScreen {
     operator fun invoke(): String = fullRoute
 }
 
-open class NavScreenWithArgs(
+abstract class NavScreenWithArgs(
     protected val route: String,
     vararg args: NavArgType,
 ) : NavScreen {

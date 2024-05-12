@@ -39,6 +39,6 @@ class SplashViewModel @Inject constructor(
     }
 
     companion object {
-        val COSMETIC_DELAY = 2.5.seconds
+        private val COSMETIC_DELAY = 2.5.seconds
     }
 }
