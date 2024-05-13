@@ -91,8 +91,15 @@ dependencies {
     implementation(libs.bundles.ktor)
 
     testImplementation(libs.test.junit)
+    testImplementation(libs.test.junit.jupiter.api)
+    runtimeOnly(libs.test.junit.jupiter.engine)
+    runtimeOnly(libs.test.junit.vintage.engine)
+
+    testImplementation(libs.test.mockk)
     testImplementation(libs.test.truth)
+    testImplementation(libs.test.turbine)
     testImplementation(libs.coroutines.test)
+    testImplementation(libs.ktor.client.mock)
 
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)
