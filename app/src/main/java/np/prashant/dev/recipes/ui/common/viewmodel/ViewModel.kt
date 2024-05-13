@@ -22,7 +22,5 @@ abstract class ViewModel<A : ViewAction, S : ViewState>(initialState: S) : ViewM
         _state.value = _state.value.block()
     }
 
-    protected open suspend fun handleAction(action: A) {
-
-    }
+    protected open suspend fun handleAction(action: A) {}
 }
