@@ -116,6 +116,8 @@ build/
 # Ignore Gradle GUI config
 gradle-app.setting
 
+# Since Kotlin 2.0.0, folder named ".kotlin" is created at compile time
+.kotlin
 
 ### Android ###
 # Built application files

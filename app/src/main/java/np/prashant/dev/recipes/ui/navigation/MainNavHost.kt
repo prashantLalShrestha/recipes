@@ -1,6 +1,7 @@
 package np.prashant.dev.recipes.ui.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import np.prashant.dev.recipes.ui.favourites.FavouritesListScreen
 import np.prashant.dev.recipes.ui.navigation.NavigationGraph.Screen
@@ -12,9 +13,11 @@ import np.prashant.dev.recipes.ui.splash.SplashScreen
 
 @Composable
 internal fun MainNavHost(
-    navController: NavHostController
+    navController: NavHostController,
+    modifier: Modifier = Modifier,
 ) {
     NavHost(
+        modifier = modifier,
         navController = navController,
         route = NavigationGraph.GRAPH_ROUTE,
         startScreen = Screen.Splash,
